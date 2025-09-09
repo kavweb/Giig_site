@@ -1,0 +1,83 @@
+/* ساختار کلی */
+.header {
+  background: #0f1c2e;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #f0a500;
+}
+
+/* منوی دسکتاپ */
+.nav--desktop {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav--desktop a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.nav--desktop a:hover {
+  color: #f0a500;
+}
+
+/* دکمه موبایل */
+.nav__toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* منوی موبایل */
+.nav--mobile {
+  flex-direction: column;
+  background: #1c2a3a;
+  padding: 1rem;
+  display: none;
+}
+
+.nav--mobile a {
+  margin: 0.5rem 0;
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav--mobile a:hover {
+  color: #f0a500;
+}
+
+/* ریسپانسیو */
+@media (max-width: 768px) {
+  .nav--desktop {
+    display: none;
+  }
+
+  .nav__toggle {
+    display: block;
+  }
+}
+
+@media (max-width: 769px) {
+  .nav--mobile {
+    display: flex;
+  }
+}
+
