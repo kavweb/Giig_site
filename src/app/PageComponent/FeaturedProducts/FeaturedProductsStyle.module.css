@@ -1,0 +1,116 @@
+.featuredSection {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f9fafb;
+  padding: 2rem;
+}
+
+.sectionContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  width: 100%;
+  max-width: 1200px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.textColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #0f172a;
+  margin-bottom: 1rem;
+}
+
+.sectionDescription {
+  font-size: 1.2rem;
+  color: #475569;
+  margin-bottom: 0.5rem;
+}
+
+.sectionCategory {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #2563eb;
+}
+
+.imageColumn {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageWrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease;
+}
+
+.imageWrapper:hover {
+  transform: translateY(-5px);
+}
+
+.productImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.imageWrapper:hover .productImage {
+  transform: scale(1.05);
+}
+
+.imageButton {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #facc15;
+  color: #0f172a;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.imageButton:hover {
+  background: #eab308;
+}
+
+/* انیمیشن fade برای تغییر سکشن */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 ریسپانسیو */
+@media (max-width: 800px) {
+  .sectionContainer {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+.featuredSection{
+  padding: 7rem;
+}
+  .imageColumn {
+    flex-direction: column;
+  }
+}

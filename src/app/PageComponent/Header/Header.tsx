@@ -1,15 +1,24 @@
 "use client";
-import { useState } from "react";
-import styles from "./headerstyle.module.css";
+import { useState, useEffect } from "react";
+import styles from "./headerStyle.module.css";
 import Image from 'next/image'
 import icons from '../../../../public/icon.webp'
+
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
       <div className={styles.headerContainer}>
-       
         {/* دکمه موبایل */}
         <button
           className={styles.navToggle}
@@ -22,8 +31,8 @@ export default function Header() {
         {/* منوی دسکتاپ */}
         <nav className={`${styles.nav} ${styles.navDesktop}`}>
           <a href="/">صفحه اصلی</a>
-          <a href="/about">درباره ما</a>
           <a href="/products">محصولات</a>
+          <a href="/about">درباره ما</a>
         </nav>
 
         <div className={styles.headerLogo}>
@@ -35,9 +44,7 @@ export default function Header() {
             height={100}
             alt="Picture of the author"
           />
-          
         </div>
-
       </div>
 
       {/* منوی موبایل */}
