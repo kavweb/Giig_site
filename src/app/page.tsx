@@ -1,10 +1,8 @@
-import Image from "next/image";
-import Header from "./PageComponent/Header/Header";
+import Hero from "./PageComponent/Hero/Hero";
 export default function Home() {
   return (
     <div>
-      <Header></Header>
-  
+      <Hero></Hero>
     </div>
   );
 }

@@ -1,0 +1,102 @@
+/* ساختار کلی */
+.header {
+  background: #0f1c2ed6;
+  color: #fff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+}
+
+.headerContainer {
+  display: flex;
+  margin: 1rem 7rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headerLogo{
+  align-items: center;
+  display: flex;
+}
+.logoImg{
+  padding-right: 2rem;
+}
+.headerLogo a{
+    color: #fff;
+    cursor: pointer;
+    background: #e67e22;
+    border: none;
+    border-radius: 6px;
+    padding: .8rem 1.5rem;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background .3s;
+}
+
+/* منوی دسکتاپ */
+.navDesktop {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navDesktop a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 25px;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  border-bottom: 1px solid transparent;
+}
+
+.navDesktop a:hover {
+  color: #f0a500;
+  border-bottom: 1px solid #f0a500;
+}
+
+/* دکمه موبایل */
+.navToggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* منوی موبایل */
+.navMobile  {
+  flex-direction: column;
+  background: #1c2a3a;
+  padding: 1rem;
+  display: none;
+}
+
+.navMobile  a {
+  margin: 0.5rem 0;
+  text-decoration: none;
+  color: #fff;
+}
+
+.navMobile  a:hover {
+  color: #f0a500;
+}
+
+/* ریسپانسیو */
+@media (max-width: 768px) {
+  .navDesktop {
+    display: none;
+  }
+
+  .navToggle {
+    display: block;
+  }
+}
+
+@media (max-width: 769px) {
+  .navMobile  {
+    display: flex;
+  }
+}
+
