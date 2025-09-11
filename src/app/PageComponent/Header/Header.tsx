@@ -49,6 +49,7 @@ export default function Header() {
 
       {/* منوی موبایل */}
       {isOpen && (
+        // I edited these line for vercel testing
         <nav className={`${styles.nav} ${styles.navMobile}`}>
           <Link href="/" onClick={() => setIsOpen(false)}>صفحه اصلی</Link>
           <Link href="/about" onClick={() => setIsOpen(false)}>درباره ما</Link>
