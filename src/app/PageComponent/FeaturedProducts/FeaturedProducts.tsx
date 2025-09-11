@@ -47,7 +47,7 @@ export default function FeaturedProducts() {
                         height={480}
                     />
                     <div className={styles.imageButton}>
-                        مشاهده جزئیات
+                        رفتن به صفحه
                     </div>
                     </Link>
                 </div>
