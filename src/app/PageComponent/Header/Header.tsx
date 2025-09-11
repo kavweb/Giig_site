@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import styles from "./headerStyle.module.css";
 import Image from 'next/image'
 import icons from '../../../../public/icon.webp'
-
+import Link from "next/link";
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,9 +30,9 @@ export default function Header() {
 
         {/* منوی دسکتاپ */}
         <nav className={`${styles.nav} ${styles.navDesktop}`}>
-          <a href="/">صفحه اصلی</a>
-          <a href="/products">محصولات</a>
-          <a href="/about">درباره ما</a>
+          <Link href="/">صفحه اصلی</Link>
+          <Link href="/products">محصولات</Link>
+          <Link href="/about">درباره ما</Link>
         </nav>
 
         <div className={styles.headerLogo}>
@@ -50,9 +50,9 @@ export default function Header() {
       {/* منوی موبایل */}
       {isOpen && (
         <nav className={`${styles.nav} ${styles.navMobile}`}>
-          <a href="/" onClick={() => setIsOpen(false)}>صفحه اصلی</a>
-          <a href="/about" onClick={() => setIsOpen(false)}>درباره ما</a>
-          <a href="/products" onClick={() => setIsOpen(false)}>محصولات</a>
+          <Link href="/" onClick={() => setIsOpen(false)}>صفحه اصلی</Link>
+          <Link href="/about" onClick={() => setIsOpen(false)}>درباره ما</Link>
+          <Link href="/products" onClick={() => setIsOpen(false)}>محصولات</Link>
         </nav>
       )}
     </header>
