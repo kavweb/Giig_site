@@ -1,76 +1,25 @@
 .featuredSection {
+  width: 100%;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f9fafb;
-  padding: 2rem;
+  background: #f9f9f9;
 }
 
 .sectionContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  width: 100%;
-  max-width: 1200px;
-  animation: fadeIn 1s ease-in-out;
-}
-
-.textColumn {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.sectionTitle {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #0f172a;
-  margin-bottom: 1rem;
-}
-
-.sectionDescription {
-  font-size: 1.2rem;
-  color: #475569;
-  margin-bottom: 0.5rem;
-}
-
-.sectionCategory {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #2563eb;
-}
-
-.imageColumn {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
   align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  max-width: 1200px;
+  transition: all 0.6s ease;
 }
-
-.imageWrapper {
-  position: relative;
-  overflow: hidden;
-  border-radius: 1rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.4s ease;
+.sectionTitle{
+  font-size: 90px;
+  color: #0f1c2ed6;
+  font-family: sans-serif;
 }
-
-.imageWrapper:hover {
-  transform: translateY(-5px);
-}
-
-.productImage {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: transform 0.5s ease;
-}
-
-.imageWrapper:hover .productImage {
-  transform: scale(1.05);
-}
-
 .imageButton {
   position: absolute;
   bottom: 1rem;
@@ -88,29 +37,59 @@
 .imageButton:hover {
   background: #eab308;
 }
-
-/* انیمیشن fade برای تغییر سکشن */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.textColumn {
+  flex: 1;
+  padding: 20px;
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.6s ease;
 }
 
-/* 📱 ریسپانسیو */
+.imageColumn {
+  flex: 1;
+  text-align: center;
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.6s ease;
+}
+
+.productImage {
+  width: 300px;
+  height: 480px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* وقتی انیمیشن فعاله */
+.animate .textColumn {
+  opacity: 0;
+  transform: translateX(100px); /* از راست میره */
+}
+
+.animate .imageColumn {
+  opacity: 0;
+  transform: translateX(-100px); /* از چپ میره */
+}
 @media (max-width: 800px) {
   .sectionContainer {
     grid-template-columns: 1fr;
     text-align: center;
   }
-.featuredSection{
-  padding: 7rem;
-}
+
   .imageColumn {
     flex-direction: column;
+  }
+
+  .sectionContainer{
+    flex-direction: column;
+  }
+
+  .productImage {
+    width: 200px;
+    height: 320px;
+  }
+  .sectionTitle{
+  font-size: 40px;
   }
 }
