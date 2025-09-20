@@ -2,21 +2,3 @@
   direction: rtl;
   margin: 0px;
 }
-
-/* for slide show mode */
-/* html, body {
-  height: 100%;
-  margin: 0;
-  scroll-behavior: smooth; 
-}
-
-main {
-  height: 100vh; 
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory; 
-}
-
-section {
-  height: 100vh; 
-  scroll-snap-align: start; 
-} */

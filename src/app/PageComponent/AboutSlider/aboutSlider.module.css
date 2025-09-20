@@ -1,0 +1,86 @@
+.TrustSection {
+  width: 100%;
+  height: auto;
+  background-color: #fffcf3;
+  padding: 2rem 0;
+  overflow: hidden;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0 1rem; 
+  scroll-snap-align: start;
+  height: 90vh;
+}
+
+.sectionDiv {
+  text-align: center;
+}
+
+.sectionDiv h1 {
+  color: #1e3a8a;
+  font-size: 32px;
+  line-height: 40px; 
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-family: "Vazirmatn", sans-serif;
+}
+
+
+
+
+.sectionDiv p {
+  font-size: 1.1rem;
+  color: #4b5563;
+  font-family: "Vazirmatn", sans-serif;
+}
+
+.sectionImage {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.sectionImage:hover {
+  transform: scale(1.05);
+}
+
+
+/* ریسپانسیو کردن */
+@media (max-width: 768px) {
+  .sectionDiv h1 {
+    font-size: 1.8rem; 
+  }
+
+  .sectionDiv p {
+    font-size: 0.9rem;
+  }
+
+  .sectionImage {
+    max-width: 300px; 
+    margin-top: 5vh;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    flex-direction: row; 
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .sectionDiv {
+    max-width: 50%; 
+  }
+  .sectionImage {
+    margin-top: 5vh;
+  }
+}
