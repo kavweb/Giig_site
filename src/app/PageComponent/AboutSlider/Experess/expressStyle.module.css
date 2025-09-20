@@ -1,5 +1,4 @@
 .section {
-  width: 100%;
   background: #f9f9f9;
   padding: 4rem 1.5rem;
 }
@@ -59,7 +58,7 @@
 }
 
 .card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
 }
 
 .card h3 {

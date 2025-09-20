@@ -9,14 +9,14 @@ export default function ExpertsSection() {
       role: "مدیر فروش",
       phone: "0912xxxxxxx",
       whatsapp: "https://wa.me/98912xxxxxxx",
-      image: "/public/person.png", // مسیر عکس
+      image: "/person.png", // مسیر عکس
     },
     {
       name: "محمدمهدی زارع",
       role: "کارشناس فروش",
       phone: "0915xxxxxxx",
       whatsapp: "https://wa.me/98915xxxxxxx",
-      image: "/public/person.png",
+      image: "/person.png",
     },
   ];
 
