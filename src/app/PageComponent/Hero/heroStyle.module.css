@@ -1,7 +1,7 @@
 .hero {
   position: relative;
   height: 100vh;
-  background: url("../style/public/image/hero_desktop.webp") center/cover no-repeat;
+  background: url("../../../../public/hero_desktop.webp") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,7 +48,7 @@
 }
 @media (max-width: 769px) {
 .hero {
-  background: url("../style/public/image/hero_mobile.webp") center/cover no-repeat;
+  background: url("../../../../public/hero_mobile.webp") center/cover no-repeat;
 }
 }
 

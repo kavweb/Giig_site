@@ -1,0 +1,111 @@
+.section {
+  background: #f9f9f9;
+  padding: 4rem 1.5rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.header h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #222;
+}
+
+.header p {
+  margin-top: 0.5rem;
+  color: #555;
+  font-size: 1rem;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  grid-template-columns: 1fr;
+}
+.avatar {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #eee;
+}
+
+.avatar img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.role {
+  font-size: 0.95rem;
+  color: #777;
+  margin-top: 0.3rem;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.callBtn,
+.whatsappBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.6rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.callBtn {
+  background: #2563eb;
+  color: #fff;
+}
+
+.callBtn:hover {
+  background: #1e4ed8;
+}
+
+.whatsappBtn {
+  background: #25d366;
+  color: #fff;
+}
+
+.whatsappBtn:hover {
+  background: #1ebe5a;
+}

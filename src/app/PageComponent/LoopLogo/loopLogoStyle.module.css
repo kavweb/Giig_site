@@ -1,0 +1,60 @@
+.clientsSection {
+  padding: 50px 20px;
+  background: #f8f9fa;
+  overflow: hidden;
+  text-align: center;
+}
+
+.clientsTitle {
+  font-size: 24px;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+.logosWrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.logosMarquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 20s linear infinite;
+  animation-play-state: running; 
+}
+
+.logosMarquee:hover {
+  animation-play-state: paused;
+}
+
+.logoItem {
+  flex: 0 0 auto;
+  margin: 0 40px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.logoItem:hover {
+  opacity: 1;
+}
+
+.logoItem img {
+  height: 60px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.logoItem:hover img {
+  filter: grayscale(0%);
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
