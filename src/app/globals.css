@@ -2,3 +2,26 @@
   direction: rtl;
   margin: 0px;
 }
+@font-face {
+  font-family: "Vazir";
+  src: url("/fonts/Vazir.woff2") format("woff2"),
+       url("/fonts/Vazir.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazir";
+  src: url("/fonts/Vazir-Bold.woff2") format("woff2"),
+       url("/fonts/Vazir-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: "Vazir", sans-serif;
+  line-height: 1.6;
+  color: #222;
+}

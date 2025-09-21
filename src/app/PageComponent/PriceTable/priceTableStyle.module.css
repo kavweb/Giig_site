@@ -2,6 +2,9 @@
   padding: 2rem;
   background: #dee7f8;
   border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   animation: fadeIn 0.5s ease-in;
 }
@@ -37,11 +40,10 @@
   border-color: #1E3A8A;
 }
 
-.updatedAt {
-  font-size: 0.95rem;
-  color: #64748B;
+.tableTitle {
+  color: #1E3A8A;
   margin-bottom: 1.5rem;
-  font-weight: 500;
+  font-size: 30px;
 }
 
 .tableWrapper {

@@ -29,7 +29,6 @@
   line-height: 40px; 
   font-weight: 700;
   margin-bottom: 1rem;
-  font-family: "Vazirmatn", sans-serif;
 }
 
 
@@ -38,11 +37,10 @@
 .sectionDiv p {
   font-size: 1.1rem;
   color: #4b5563;
-  font-family: "Vazirmatn", sans-serif;
 }
 
 .sectionImage {
-  width: 100%;
+  /* width: 100%; */
   max-width: 600px;
   height: auto;
   object-fit: contain;

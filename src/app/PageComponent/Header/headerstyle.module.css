@@ -78,6 +78,8 @@ background-color: #1c2a3ab5;
   flex-direction: column;
   background: #1c2a3a;
   padding: 1rem;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
   display: none;
 }
 

@@ -21,6 +21,11 @@
   display: flex;
   width: max-content;
   animation: marquee 20s linear infinite;
+  animation-play-state: running; 
+}
+
+.logosMarquee:hover {
+  animation-play-state: paused;
 }
 
 .logoItem {

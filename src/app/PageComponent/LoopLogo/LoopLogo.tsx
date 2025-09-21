@@ -4,11 +4,7 @@ import styles from "./loopLogoStyle.module.css"
 
 const clients = [
   "/logos/client1.png",
-  "/logos/client1.png",
-  "/logos/client1.png",
-  "/logos/client1.png",
-  "/logos/client1.png",
-  "/logos/client1.png",
+  "/logos/client2.png"
 ];
 
 const ClientsSection: React.FC = () => {

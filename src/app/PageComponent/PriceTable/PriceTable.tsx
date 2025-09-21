@@ -1,9 +1,8 @@
 "use client";
 import styles from "./priceTableStyle.module.css";
-import {useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { supabase } from "../../../../lib/supabaseClient";
-import React from 'react';
-
+import React from "react";
 
 type Product = {
   id: number;
@@ -18,7 +17,8 @@ type Product = {
 };
 
 export default function PriceTable() {
-  const [selectedCategory, setSelectedCategory] = useState("all");
+  // مقدار پیش‌فرض دسته رو روی یکی از دسته‌ها گذاشتم
+  const [selectedCategory, setSelectedCategory] = useState("تیرآهن");
   const [expanded, setExpanded] = useState<number | null>(null);
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
@@ -41,20 +41,8 @@ export default function PriceTable() {
     fetchProducts();
   }, []);
 
-  const filtered =
-    selectedCategory === "all"
-      ? products
-      : products.filter((p) => p.name === selectedCategory);
-
-  const getCurrentDateTime = () => {
-    return new Date().toLocaleString("fa-IR", {
-      year: "numeric",
-      month: "2-digit",
-      day: "2-digit",
-      hour: "2-digit",
-      minute: "2-digit",
-    });
-  };
+  // دیگه شرط all نداریم
+  const filtered = products.filter((p) => p.name === selectedCategory);
 
   const toggleExpanded = (id: number) => {
     setExpanded(expanded === id ? null : id);
@@ -64,28 +52,26 @@ export default function PriceTable() {
     <section className={styles.priceSection}>
       <div className={styles.categoryBar}>
         <button
-          className={`${styles.categoryBtn} ${selectedCategory === "all" ? styles.activeCategory : ""}`}
-          onClick={() => setSelectedCategory("all")}
-        >
-          همه
-        </button>
-        <button
-          className={`${styles.categoryBtn} ${selectedCategory === "میلگرد" ? styles.activeCategory : ""}`}
-          onClick={() => setSelectedCategory("میلگرد")}
-        >
-          میلگرد
-        </button>
-        <button
-          className={`${styles.categoryBtn} ${selectedCategory === "تیرآهن" ? styles.activeCategory : ""}`}
+          className={`${styles.categoryBtn} ${
+            selectedCategory === "تیرآهن" ? styles.activeCategory : ""
+          }`}
           onClick={() => setSelectedCategory("تیرآهن")}
         >
           تیرآهن
         </button>
+        <button
+          className={`${styles.categoryBtn} ${
+            selectedCategory === "میلگرد" ? styles.activeCategory : ""
+          }`}
+          onClick={() => setSelectedCategory("میلگرد")}
+        >
+          میلگرد
+        </button>
+
       </div>
 
-      <p className={styles.updatedAt}>⏱ آخرین دریافت اطلاعات: {getCurrentDateTime()}</p>
-
       <div className={styles.tableWrapper}>
+        {/* Desktop Table */}
         <table className={styles.tableDesktop}>
           <thead>
             <tr>
@@ -108,7 +94,9 @@ export default function PriceTable() {
                   <td>{p.price ? `${p.price} تومان` : "استعلام"}</td>
                   <td>
                     <button
-                      className={`${styles.arrowBtn} ${expanded === p.id ? styles.expanded : ""}`}
+                      className={`${styles.arrowBtn} ${
+                        expanded === p.id ? styles.expanded : ""
+                      }`}
                       onClick={() => toggleExpanded(p.id)}
                     >
                       ▼
@@ -129,9 +117,9 @@ export default function PriceTable() {
               </React.Fragment>
             ))}
           </tbody>
-
         </table>
 
+        {/* Mobile Table */}
         <table className={styles.tableMobile}>
           <thead>
             <tr>
@@ -150,7 +138,9 @@ export default function PriceTable() {
                   <td>{p.price ? `${p.price} تومان` : "استعلام"}</td>
                   <td>
                     <button
-                      className={`${styles.arrowBtn} ${expanded === p.id ? styles.expanded : ""}`}
+                      className={`${styles.arrowBtn} ${
+                        expanded === p.id ? styles.expanded : ""
+                      }`}
                       onClick={() => toggleExpanded(p.id)}
                     >
                       ▼
@@ -177,4 +167,3 @@ export default function PriceTable() {
     </section>
   );
 }
- 
