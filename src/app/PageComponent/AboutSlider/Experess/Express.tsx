@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import styles from "./expressStyle.module.css";
 import Image from "next/image";
+import Link from 'next/link';
 export default function ExpertsSection() {
   const experts = [
     {
@@ -44,17 +45,17 @@ export default function ExpertsSection() {
             <p className={styles.role}>{expert.role}</p>
 
             <div className={styles.actions}>
-              <a href={`tel:${expert.phone}`} className={styles.callBtn}>
+              <Link href={`tel:${expert.phone}`} className={styles.callBtn}>
                 📞 تماس
-              </a>
-              <a
+              </Link>
+              <Link
                 href={expert.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.whatsappBtn}
               >
                 💬 واتساپ
-              </a>
+              </Link>
             </div>
           </div>
         ))}
