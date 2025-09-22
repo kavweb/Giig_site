@@ -71,6 +71,7 @@ background-color: #1c2a3ab5;
   background: none;
   border: none;
   color: #fff;
+  transform: rotate(90deg);
   cursor: pointer;
 }
 
@@ -93,7 +94,7 @@ background-color: #1c2a3ab5;
   color: #f0a500;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1076px) {
   .navDesktop {
     display: none;
   }
@@ -107,6 +108,6 @@ background-color: #1c2a3ab5;
   }
 
   .headerContainer {
-    margin: 1rem 2rem;
+    margin: 0rem 1rem;
   }
 }

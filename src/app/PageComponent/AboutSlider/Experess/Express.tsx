@@ -46,7 +46,7 @@ export default function ExpertsSection() {
 
             <div className={styles.actions}>
               <Link href={`tel:${expert.phone}`} className={styles.callBtn}>
-                📞 تماس
+                 تماس
               </Link>
               <Link
                 href={expert.whatsapp}
@@ -54,7 +54,7 @@ export default function ExpertsSection() {
                 rel="noopener noreferrer"
                 className={styles.whatsappBtn}
               >
-                💬 واتساپ
+                 واتساپ
               </Link>
             </div>
           </div>
