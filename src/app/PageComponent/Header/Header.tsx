@@ -25,7 +25,7 @@ export default function Header() {
           onClick={() => setIsOpen(!isOpen)}
           aria-label="منو"
         >
-          |||
+          <span>|||</span>
         </button>
 
         {/* منوی دسکتاپ */}

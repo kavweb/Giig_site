@@ -153,6 +153,21 @@
   background: #F9FAFB;
 }
 
+.showMoreBtn {
+  margin-top: 12px;
+  padding: 8px 16px;
+  background: #1e3a8a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.showMoreBtn:hover {
+  background: #162d6a;
+}
+
 @media (max-width: 768px) {
   .tableDesktop {
     display: none;

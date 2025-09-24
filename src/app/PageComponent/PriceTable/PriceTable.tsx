@@ -21,6 +21,7 @@ export default function PriceTable() {
   const [selectedCategory, setSelectedCategory] = useState("تیرآهن");
   const [expanded, setExpanded] = useState<number | null>(null);
   const [products, setProducts] = useState<Product[]>([]);
+  const [showAll, setShowAll] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -43,6 +44,7 @@ export default function PriceTable() {
 
   // دیگه شرط all نداریم
   const filtered = products.filter((p) => p.name === selectedCategory);
+  const visibleProducts = showAll ? filtered : filtered.slice(0, 10);
 
   const toggleExpanded = (id: number) => {
     setExpanded(expanded === id ? null : id);
@@ -84,7 +86,7 @@ export default function PriceTable() {
             </tr>
           </thead>
           <tbody>
-            {filtered.map((p) => (
+            {visibleProducts.map((p) => (
               <React.Fragment key={p.id}>
                 <tr className={styles.tableRow}>
                   <td>{p.name}</td>
@@ -130,7 +132,7 @@ export default function PriceTable() {
             </tr>
           </thead>
           <tbody>
-            {filtered.map((p) => (
+            {visibleProducts.map((p) => (
               <React.Fragment key={p.id}>
                 <tr className={styles.tableRow}>
                   <td>{`${p.name} ${p.size}`}</td>
@@ -163,6 +165,15 @@ export default function PriceTable() {
             ))}
           </tbody>
         </table>
+        {filtered.length > 10 && (
+          <button
+            className={styles.showMoreBtn}
+            onClick={() => setShowAll(!showAll)}
+          >
+            {showAll ? "نمایش کمتر" : "نمایش بیشتر"}
+          </button>
+        )}
+
       </div>
     </section>
   );
