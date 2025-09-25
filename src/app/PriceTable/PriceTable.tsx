@@ -1,7 +1,7 @@
 "use client";
 import styles from "./priceTableStyle.module.css";
 import { useEffect, useState } from "react";
-import { supabase } from "../../../../lib/supabaseClient";
+import { supabase } from "../../../lib/supabaseClient";
 import React from "react";
 
 type Product = {
@@ -16,9 +16,9 @@ type Product = {
   code: string;
 };
 
-export default function PriceTable() {
+export default function PriceTable({ initialCategory }: { initialCategory: string }) {
   // مقدار پیش‌فرض دسته رو روی یکی از دسته‌ها گذاشتم
-  const [selectedCategory, setSelectedCategory] = useState("تیرآهن");
+  const [selectedCategory, setSelectedCategory] = useState(initialCategory);
   const [expanded, setExpanded] = useState<number | null>(null);
   const [products, setProducts] = useState<Product[]>([]);
   const [showAll, setShowAll] = useState(false);
@@ -42,7 +42,10 @@ export default function PriceTable() {
     fetchProducts();
   }, []);
 
-  // دیگه شرط all نداریم
+  useEffect(() => {
+    setSelectedCategory(initialCategory);
+  }, [initialCategory]);
+
   const filtered = products.filter((p) => p.name === selectedCategory);
   const visibleProducts = showAll ? filtered : filtered.slice(0, 10);
 
@@ -91,7 +94,7 @@ export default function PriceTable() {
                 <tr className={styles.tableRow}>
                   <td>{p.name}</td>
                   <td>{p.size}</td>
-                  <td>{p.weight}</td>
+                  <td>{p.weight} Kg</td>
                   <td>{p.factory}</td>
                   <td>{p.price ? `${p.price} تومان` : "استعلام"}</td>
                   <td>
@@ -110,7 +113,7 @@ export default function PriceTable() {
                     <td colSpan={6}>
                       <div className={styles.moreInfo}>
                         <p>واحد: {p.unit}</p>
-                        <p>طول شاخه: {p.length}</p>
+                        <p>طول شاخه: {p.length} متر</p>
                         <p>کد: {p.code}</p>
                       </div>
                     </td>
@@ -153,9 +156,9 @@ export default function PriceTable() {
                   <tr className={styles.moreInfoRow}>
                     <td colSpan={4}>
                       <div className={styles.moreInfo}>
-                        <p>وزن شاخه: {p.weight}</p>
+                        <p>وزن شاخه: {p.weight} کیلوگرم</p>
                         <p>واحد: {p.unit}</p>
-                        <p>طول شاخه: {p.length}</p>
+                        <p>طول شاخه: {p.length} متر</p>
                         <p>کد: {p.code}</p>
                       </div>
                     </td>
